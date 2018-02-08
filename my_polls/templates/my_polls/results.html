@@ -1,0 +1,10 @@
+{% extends 'my_polls/base.html' %}
+{% block content %}
+<h1>Results</h1>
+<h2>{{ question.question_text }}</h2>
+<ul>
+	{% for choice in question.choice_set.all %}
+		<li>{{ choice.choice_text }} <em>{{ choice.votes }} vote{{ choice.votes|pluralize }}</em></li>
+	{% endfor %}
+</ul>
+{% endblock %}
